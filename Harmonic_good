@@ -1,0 +1,14 @@
+
+target = int(input("Enter a whole number: "))
+
+runningsum = 0 #has to be outside loop
+counter = 0
+
+while runningsum <= target:
+
+    counter = counter + 1 #by putting this first, counter isn't 0 anymore, plus we're not sure where the loop exits
+    reciprocal = 1/(counter)
+    runningsum = runningsum + reciprocal #updates inside loop, starting at 0, which was defined outside loop
+    
+    
+print('You need to add %g reciprocals up to 1/%g to reach the whole number %g.' %(counter,counter,target))
