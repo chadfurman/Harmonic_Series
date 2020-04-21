@@ -1,5 +1,3 @@
-#This runs perfectly, unless you enter too big of a number, in which case it takes forever to solve it.
-
 from IPython.display import display,Math
 
 def harmonic():
