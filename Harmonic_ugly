@@ -1,4 +1,5 @@
 #The idea of this one is to prompt the user if the calculations are taking a while.
+#I want it to ask for permission before just invisibly and indefinitely running.
 #This is because by the nature of the calculations, it slows down on numbers larger than 17.
 #10 million calculations take about 30 seconds. So it is supposed to pay attention to how high
 #the counter gets, then stop and ask, "this might take a while, continue?" to let you decide
@@ -52,7 +53,11 @@ def harmonic():
             print("Yeah, the numbers get big really fast.")
             counter = 0
             harmonic()
-    
+            
+        #Here would be another while loop 
+
+#I had to disable this if-then part to keep it from starting every session with an apology. I understand why it does it. I think I know what I need
+#to do to fix it, but I need to go grocery shopping first.
 # if counter == 0:
 #     print("Sorry.")
 #     harmonic() 
