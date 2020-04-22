@@ -22,7 +22,7 @@ He had been there all night, and when his boss arrived, he was muttering angrily
 
 The boss asks him what's wrong.
 
-The developer replies, "It's this language I'm trying to code in, sir. The simplest statements take at least twenty lines of code, it has no standard libraries, it auto-compiles every five minutes, it requires special characters I have to copy-paste, it exits loops in the wrong place on Thursdays, the letter "e" triggers a one-hour rollback, and if you get a segfault, it displays a quote from the Third Reich."
+The developer replies, "It's this language I'm trying to code in, sir. The simplest statements take at least twenty lines of code, it has no standard libraries, it auto-compiles every five minutes, it requires special characters I have to copy-paste, it exits loops in the wrong place on Thursdays, the letter "e" triggers it to revert to the second-to-last checkpoint, and if you get a segfault, it displays a quote from the Third Reich."
 
 His boss asks, "Well, why don't you use a different language, then?"
 
