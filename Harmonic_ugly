@@ -47,14 +47,14 @@ def harmonic():
             runningsum = runningsum + reciprocal 
             
             display(Math('\\text{You need to add }%g\\text{ reciprocals up to }\\frac{1}{%g}\\text{ to reach the whole number }%g.' %(counter,counter,target)))
-            harmonic() 
+            harmonic()
             
         else:
             print("Yeah, the numbers get big really fast.")
             counter = 0
             harmonic()
             
-        #Here would be another while loop 
+        #Here would be another while loop for even larger numbers of iterations, which warns it really could take a very long time.
 
 #I had to disable this if-then part to keep it from starting every session with an apology. I understand why it does it. I think I know what I need
 #to do to fix it, but I need to go grocery shopping first.
