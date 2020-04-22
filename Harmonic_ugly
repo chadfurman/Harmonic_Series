@@ -1,0 +1,65 @@
+#The idea of this one is to prompt the user if the calculations are taking a while.
+#This is because by the nature of the calculations, it slows down on numbers larger than 17.
+#10 million calculations take about 30 seconds. So it is supposed to pay attention to how high
+#the counter gets, then stop and ask, "this might take a while, continue?" to let you decide
+if you want to possibly wait a long time.
+#I set the cutoff very low for testing. Use numbers above 6 to see if it works properly with the 
+#continue? prompt. Use numbers below 5 to see if it works without hitting the continue? prompt.
+#You'll see that as it is now, it prompts continue? no matter what, and doesn't give the correct answer.
+#Correct answers should be 1, 4, 11, 31, 83, 227, 616. Similar attempts to implement this sort of thing
+#have resulted in it giving the correct answer, but not stopping to prompt.
+#I have developed a different approach to addressing the slow calculation problem, which I implemented
+#in Harmonic_celestial. But I'm presenting Harmonic_ugly here because the fact it doesn't do what I expect
+#means there are still concepts I'm not clear on. The only reason to fix this code is so I can learn the 
+#concepts that are escaping me. In particular, I don't understand what happens when a while loop is satisfied.
+#I have two while loops, one right after the other, but the first one completes and provides its output (101),
+#and though the prompt from the second while loop appears (whether the first while loop completed or not),
+#I don't think the second while loop does any calculations.
+
+from IPython.display import display,Math
+
+runningsum = 0 
+counter = 0
+
+def harmonic():
+    
+    runningsum = 0 
+    counter = 0
+
+    target = int(input("Enter a whole number: "))
+
+    while counter <= 100 and runningsum <= target: #I made this a small number for testing. For inputs 1-5
+
+        counter = counter + 1 
+        reciprocal = 1/(counter)
+        runningsum = runningsum + reciprocal 
+        
+    
+    while counter >= 100 and counter <= 10000000 and runningsum <= target: #Inputs 6 and higher should get the counter past 200
+            
+        continue_prompt = str(input("This could take a while. Contine? y/n: "))
+        
+        if continue_prompt == ("y"):
+            
+            counter = counter + 1
+            reciprocal = 1/(counter)
+            runningsum = runningsum + reciprocal 
+            
+            display(Math('\\text{You need to add }%g\\text{ reciprocals up to }\\frac{1}{%g}\\text{ to reach the whole number }%g.' %(counter,counter,target)))
+            harmonic() 
+            
+        else:
+            print("Yeah, the numbers get big really fast.")
+            counter = 0
+            harmonic()
+    
+# if counter == 0:
+#     print("Sorry.")
+#     harmonic() 
+# else:
+#     display(Math('\\text{You need to add }%g\\text{ reciprocals up to }\\frac{1}{%g}\\text{ to reach the whole number }%g.' %(counter,counter,target)))
+#     harmonic() 
+            
+ 
+    
+harmonic()
