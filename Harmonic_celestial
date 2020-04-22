@@ -1,0 +1,39 @@
+#A version that is better than good and the opposite of ugly: Harmonic_celestial.
+#It's short, clean, and elegant, like the solutions Red always shows me vs. the complicated clusterfucks
+#I naturally come up with.
+#I'm very happy with how this works and proud of myself for figuring out the loops on my own.
+#It gives a satisfactory solution to the problem of the user not knowing whether the thing is 
+#hanging or just taking a long time to calculate.
+#Plus, it displays the results as a list noting each whole number on the way,
+#which was one of my original concepts.
+#If you input a whole number, say 20, it will say how many iterations it took to reach 1, 2, 3, 4, etc.
+#up to 20.
+#These results appear one at a time, and when the output begins to slow, you can see that.
+#So you can put in a big number like 80 and then just walk away from your computer for a while,
+#and check on it later and get an idea of how long the next number will take to reach by looking
+#at how many numbers have already been calculated and the time it took.
+#the only thing not working properly right now is the time stamp.
+#It stamps at the right place, i.e. whenever the next whole number is reached, but
+#it only calculates the time for the one line it is next to. I need it to time the entire while loop,
+#or note the actual computer time (hours, minutes, seconds) that the display code is output.
+#Also, it returns the wrong result for 1, and I understand why this happens, but am not going to worry
+#about figuring out how to fix it until everything else works.
+
+
+from IPython.display import display,Math
+
+target = int(input("Enter a whole number: "))
+
+runningsum = 0 
+counter = 0
+
+for next_integer in range(1,target+1):
+
+    while runningsum <= next_integer:
+        counter = counter + 1 
+        reciprocal = 1/(counter)
+        runningsum = runningsum + reciprocal 
+        
+    %time display(Math('\\text{You need to add }%g\\text{ reciprocals up to }\\frac{1}{%g}\\text{ to reach the whole number }%g.' %(counter,counter,next_integer)))
+
+        
